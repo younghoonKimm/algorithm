@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //기본 구조
+      function solution(n) {
+        function DFS(L) {
+          if (L === 0) return;
+          DFS(L - 1);
+        }
+        DFS(n);
+      }
+    </script>
+  </body>
+</html>
