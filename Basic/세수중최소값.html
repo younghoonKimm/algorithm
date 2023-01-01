@@ -8,12 +8,26 @@
   </head>
   <body>
     <script>
+      function solution2(a, b, c) {
+        let answer;
+        if (a < b) answer = a;
+        else answer = b;
+        if (c < answer) answer = c;
+        return answer;
+      }
+
+      console.time();
+      console.log(solution2(6, 3, 11));
+      console.timeEnd();
+
       const solution = (a, b, c) => {
         const getMinAorB = Math.min(a, b);
 
-        getMinAorB > c ? getMinAorB : c;
+        return getMinAorB < c ? getMinAorB : c;
       };
-      solution(6, 3, 11);
+      console.time();
+      console.log(solution(6, 3, 11));
+      console.timeEnd();
     </script>
   </body>
 </html>
