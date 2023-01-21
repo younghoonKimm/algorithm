@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function solution(str) {
+        let answer = "";
+        const strLength = str.length / 2;
+        const mid = Math.floor(strLength);
+        console.log(strLength % 2 === 1);
+        answer =
+          str.length % 2 === 1
+            ? str.substring(mid, mid + 1)
+            : str.substring(mid - 1, mid + 1);
+
+        return answer;
+      }
+
+      console.log(solution("study"));
+      console.log(solution("good"));
+    </script>
+  </body>
+</html>
