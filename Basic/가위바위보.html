@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Q A, B 두 사람이 가위바위보 게임을 합니다. 총 N번의 게임을 하여 A가 이기면 A를 출력하고, B가 이기면 B를 출력합니다. 비길 경우에는 D를 출력합니다.
+      // 가위, 바위, 보의 정보는 1:가위, 2:바위, 3:보로 정하겠습니다.
+      // 예를 들어 N=5이면
+
+      function solution(n) {
+        let answer = [];
+        for (let i = 0; i < n; i++) {
+          let a = Math.floor(Math.random() * (3 - 1)) + 1;
+          let b = Math.floor(Math.random() * (3 - 1)) + 1;
+
+          let res = a > b ? "A" : a === b ? "D" : "B";
+
+          answer.push(res);
+        }
+
+        return answer;
+      }
+
+      console.log(solution(23));
+    </script>
+  </body>
+</html>
