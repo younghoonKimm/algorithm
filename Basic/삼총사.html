@@ -27,6 +27,16 @@
         return result;
       }
 
+      const avd = new Map();
+
+      avd.set("111", { id: 333 });
+      avd.set("333", { id: 333 });
+
+      const csg = new Map(
+        [...avd].filter(([k, v]) => (v.id === 333 ? v : null))
+      );
+      console.log([...csg].map(([name, value]) => ({ value })));
+
       console.log(solution([-3, -2, -1, 0, 1, 2, 3]));
     </script>
   </body>
