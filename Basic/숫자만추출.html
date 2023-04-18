@@ -6,23 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  4
   <body>
     <script>
-      function solution(s) {
-        let answer = "TES";
-        s = s.toLowercase();
+      const str = "tge0a1h205er";
 
-        let len = s.length;
-
-        for (let i = 0; i < Math.floor(len / 2); i++) {
-          if (s[i] !== s[len - i - 1]) {
-            return "NO";
+      const solution = (text) => {
+        let answer = "";
+        for (let i = 0; i < text.length; i++) {
+          if (Number(text[i])) {
+            answer = answer + text[i];
           }
-
-          return answer;
         }
-      }
+
+        return +answer;
+      };
     </script>
   </body>
 </html>
