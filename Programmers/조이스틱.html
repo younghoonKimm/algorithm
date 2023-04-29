@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="https://school.programmers.co.kr/learn/courses/30/lessons/42860"
+      >조이스틱.</a
+    >
+
+    <script>
+      const v = "JAZ";
+
+      function solution(name) {
+        var answer = 0;
+
+        const aCodeLength = 65;
+        const zCodeLength = 90;
+
+        for (let i = 0; i < name.length; i++) {
+          //   Z = 90
+          //   A = 65
+
+          const moveFront = name.charCodeAt(i) - aCodeLength;
+          const moveBack = zCodeLength - name.charCodeAt(i);
+
+          if (moveFront < moveBack) {
+            console.log(moveFront);
+            answer += moveFront;
+          } else {
+            console.log(moveBack);
+            answer += moveBack;
+          }
+
+          if (i === name.length) {
+            return;
+          } else {
+            answer += 1;
+          }
+        }
+
+        console.log(answer);
+        return answer;
+      }
+
+      console.log(solution(v));
+
+      //틀림 다시 풀기
+    </script>
+  </body>
+</html>
