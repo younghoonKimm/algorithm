@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const text = "AbaAeCe";
+      const text2 = "baeeACA";
+
+      const solution = (t1, t2) => {
+        const text1Hash = new Map();
+        let answer = "YES";
+
+        for (let x of t1) {
+          if (text1Hash.has(x)) {
+            text1Hash.set(x, text1Hash.get(x) + 1);
+          } else {
+            text1Hash.set(x, 1);
+          }
+        }
+
+        for (let y of t2) {
+          if (!text1Hash.has(y) || text1Hash.get(y) === 0) {
+            answer = "NO";
+          } else {
+            text1Hash.set(y, text1Hash.get(y) - 1);
+          }
+        }
+
+        console.log(text1Hash);
+
+        return answer;
+      };
+
+      console.log(solution(text, text2));
+    </script>
+  </body>
+</html>
