@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h3>
+        N개이 숫자가 입력되면 오름차순으로 정렬하여 출력하는 프로그램을
+        작성하세요. 정렬하는 방법은 삽입정렬입니다.
+      </h3>
+      <br />
+      ▣ 첫 번째 줄에 자연수 N(1<=N<=100)이 주어집니다. 두 번째 줄에 N개의
+      자연수가 공백을 사이에 두고 입력됩니다. 각 자연수는 정수형 범위 안에
+      있습니다.
+      <br />
+      <br />
+      ▣ 출력설명
+      <br />
+      오름차순으로 정렬된 수열을 출력합니다.
+    </div>
+    <script>
+      let arr = [11, 3, 4, 9, 5, 7];
+      function solution(arr) {
+        let answer = arr;
+        for (let i = 0; i < arr.length; i++) {
+          let tmp = arr[i],
+            j;
+          for (j = i - 1; j >= 0; j--) {
+            console.log(tmp, arr[j], j);
+            if (arr[j] > tmp) arr[j + 1] = arr[j];
+            else break;
+          }
+          arr[j + 1] = tmp;
+        }
+
+        return answer;
+      }
+
+      console.log(solution(arr));
+
+      //   console.log(solution(arr));
+    </script>
+  </body>
+</html>
