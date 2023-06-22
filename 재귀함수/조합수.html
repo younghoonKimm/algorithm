@@ -1,0 +1,25 @@
+<script>
+  function solution(n, r) {
+    let answer;
+    let dy = Array.from(Array(35), () => Array(35).fill(0));
+    console.log(dy);
+    function DFS(n, r) {
+      console.log(n, r);
+      if (dy[n][r] > 0) return dy[n][r];
+      if (n === r || r === 0) {
+        return 1;
+      } else {
+        return (dy[n][r] = DFS(n - 1, r - 1) + DFS(n - 1, r));
+      }
+    }
+    console.log(answer);
+    answer = DFS(n, r);
+    return answer;
+  }
+
+  console.log(solution(5, 3));
+  //   const solution = (n) => {
+  //     return 1 < n ? n * solution(n - 1) : n;
+  //   };
+  //   console.log(solution(5));
+</script>

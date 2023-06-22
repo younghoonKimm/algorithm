@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //백준 알람시계
+
+      const addZero = (num) => (+num < 10 ? `0${num}` : num);
+
+      const timeCalc = (time) => {
+        let [hh, mm] = time;
+
+        const calcTime = (hh === 0 ? 24 : hh) * 60 + mm - 45;
+        const min = calcTime % 60;
+        const hour = (calcTime - min) / 60;
+
+        return `${addZero(hour)}:${addZero(min)}`;
+      };
+
+      const solution = (time) => {
+        let timeToNumber = time.split(":").map(Number);
+        return timeCalc(timeToNumber);
+      };
+
+      console.log(solution("04:00"));
+    </script>
+  </body>
+</html>

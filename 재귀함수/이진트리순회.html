@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div>전위 순회 -> 부 , 왼 , 오</div>
+      <div>중위 순회 -> 왼 , 부 , 오</div>
+      <div>후위 순회 -> 왼 , 오, 부</div>
+    </div>
+    <script>
+      function solution(v) {
+        let answer;
+
+        //전위 순횐
+        // function DFS(v) {
+        //   if (v > 7) {
+        //     return;
+        //   } else {
+        //     console.log(v);
+        //     DFS(v * 2);
+        //     DFS(v * 2 + 1);
+        //   }
+        // }
+
+        function DFS(v) {
+          if (v > 7) {
+            return;
+          } else {
+            //중위
+            // DFS(v * 2);
+            // console.log(v);
+            // DFS(v * 2 + 1);
+            //후위
+            // DFS(v * 2);
+            // DFS(v * 2 + 1);
+            // console.log(v);
+          }
+        }
+
+        DFS(v);
+        return answer;
+      }
+
+      console.log(solution(1));
+    </script>
+  </body>
+</html>

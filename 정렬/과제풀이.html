@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const sub = [
+        ["science", "12:40", "50"],
+        ["music", "12:20", "40"],
+        ["history", "14:00", "30"],
+        ["computer", "12:30", "100"],
+      ];
+
+      const timeToMin = (time) => {
+        const [hh, mm] = time.split(":").map(Number);
+        return hh * 60 + mm;
+      };
+
+      const solution = (sub) => {
+        let stack = [];
+
+        const sortedPlans = sub
+          .map(([subject, time, count]) => [
+            subject,
+            timeToMin(time),
+            Number(count),
+          ])
+          .sort((a, b) => b[1] - a[1]);
+        console.log(
+          sub
+            .map(([subject, time, count]) => [
+              subject,
+              timeToMin(time),
+              Number(count),
+            ])
+            .sort((a, b) => b[1] - a[1])
+        );
+
+        while (sortedPlans.length) {
+          const [subject, time, count] = sortedPlans.pop();
+
+          stack.forEach((val, idx) => {
+            console.log(val[1], subject, time);
+            if (time < val[1]) stack[idx][1] += count;
+          });
+
+          console.log(stack);
+
+          stack.push([subject, time + count]);
+        }
+        console.log(stack);
+        const answer = stack.sort((a, b) => a[1] - b[1]).map((val) => val[0]);
+
+        return answer;
+      };
+
+      console.log(solution(sub));
+    </script>
+  </body>
+</html>
